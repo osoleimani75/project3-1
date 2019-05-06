@@ -7,5 +7,14 @@ export default {
   // sign up a user to our service
   signUpUser: (username, email, password) => {
     return axios.post('api/signup', {username: username, email: email, password: password});
+  },
+  search: (city) => {
+    return axios.get(`/api/sales/${city}`);
+  },
+  getAllSales: () => {
+    return axios.get("/api/sales");
+  },
+  add: (data) => {
+    return axios.post("/api/addsale", data);
   }
 };

@@ -1,0 +1,8 @@
+ .page-container{
+    max-width: 900px !important;
+    margin: auto;
+}
+
+.saleCard{
+    padding-bottom: 25px;
+} 

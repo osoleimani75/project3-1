@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import AuthService from './../../components/AuthService';
 import { Link } from 'react-router-dom';
-
+import './style.css'
 class Login extends Component {
-  constructor() {
-    super();
-    this.Auth = new AuthService();
-  }
 
   componentWillMount() {
-    if (this.Auth.loggedIn()) {
+    // console.log(this.props)
+    if (this.props.auth.loggedIn()) {
       this.props.history.replace('/');
     }
   }
@@ -17,13 +13,13 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
 
-    this.Auth.login(this.state.email, this.state.password)
+    this.props.auth.login(this.state.email, this.state.password)
       .then(res => {
         // once user is logged in
         // take them to their profile page
         this.props.history.replace(`/`);
       })
-      .catch(err => {
+      .catch(err => { 
         alert(err.response.data.message)
       });
   };
@@ -37,11 +33,10 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="page-container">
         <div className="container">
-          <div class="jumbotron jumbotron-fluid">
-            <h1 className="salehead" style={{ textAlign: "center" }}>Login</h1>
-            <div className="saleCard" style={{ width: "70rem" }}>
+          <div className="jumbotron">
+            <h1 className="salehead">Login</h1>
+            <div className="saleCard " >
               <form onSubmit={this.handleFormSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email address:</label>
@@ -63,13 +58,12 @@ class Login extends Component {
                     style={{ width: "500px" }}
                     onChange={this.handleChange} />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary">Login</button>
               </form>
               <p><Link to="/signup">Go to Signup</Link></p>
             </div>
           </div>
         </div>
-      </div>
 
     );
   }

@@ -1,0 +1,43 @@
+.jumbotron{
+    padding: 0 !important;
+    background-color: #dfd7d0 !important;
+    border: 2px solid rgba(185, 108, 45,.4);
+    border-radius: 7px;
+}
+
+.container{
+    max-width: 700px!important;
+}
+.saleCard{
+    margin: 30px 40px 0 !important;
+}
+.saleCard button{
+    color: rgb(107, 62, 24);
+    background-color: rgba(185, 108, 45,.8);
+    border-color: rgb(107, 62, 24);    
+    margin-bottom: 27px 0 !important;
+
+}
+.saleCard input{
+    color: rgb(107, 62, 24) !important;
+    border-color: rgb(107, 62, 24);    
+    margin-bottom: 27px 0 !important;
+
+}
+
+
+
+.saleCard button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgba(185, 108, 45,.4);
+    border-color: rgb(107, 62, 24);
+}
+
+.salehead{
+    margin: 0 !important;
+    padding: 10px  40px!important;
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(107, 62, 24);
+    background-color: rgba(185, 108, 45,.8)
+}
